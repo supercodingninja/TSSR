@@ -1,0 +1,830 @@
+/* Some of this file was not required; but I really want to get the full effect of the "Submit" button, without building a website for cost, plus all the other requirements for holding sensative information.  I did originally thought about providing a local storage; but at this point of my progression as a full-stack developer and engineer, I am trying to focus more of concised and necessary markup, with HTML5; use little logic as possible, or place majority/all logic in a language like JavaScript (no/little requirement for End User to download/update machine with software or program; which could slow/hinder machine's desired performance/functionality [my opinion, at the momnet: I am open-minded]); and leave all/majority of animation with CSS3.  It is my hope and desired effefct that code is clear to the End User, Developer; and the machine and server.  I kept some original thought or intentions, in attempt to get my code to work as I desired; i.e. trying to get certain backgrounds to show.  I beleive some of my code is affecting other desired code, particurally my animations (syntax vs. symantix.*/
+
+/* html { 
+    background:  url(./VidsAndGifs/Sunrise-From-Space-Earth-Animation.mp4) repeat center fixed; 
+    background-size: cover;
+  } */
+
+/* * {
+    box-sizing: border-box;
+}
+
+.video-background {
+  background:url(https://www.youtube.com/watch?v=X6dJEAs0-Gk);
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+#vidtop-content {
+	top: 0;
+	color: #fff;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground { height: 300%; top: -100%; }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .video-foreground { width: 300%; left: -100%; }
+  }
+  @media all and (max-width: 600px) {
+  .vid-info { width: 50%; padding: .5rem; }
+  .vid-info h1 { margin-bottom: .2rem; }
+  }
+  @media all and (max-width: 500px) {
+  .vid-info .acronym { display: none; }
+  } */
+
+body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+/*=========================================================================================== 
+  
+  I NEED TO FIGURE OUT WHY THIS SECTION IS NOT APPEARING
+  
+  h3 {
+	padding-top: 25px;
+	line-height: 40px;
+	padding-bottom: 0px;
+	font-size: 22px;
+	font-weight: 900;
+}
+
+p {
+    font-weight: 300;
+    line-height: 30px;
+    padding-bottom: 15px;
+}
+  =============================================================================================*/
+
+/*===============================================================================================
+                Awesome CSS Tutorial on https://cssanimation.rocks/space-transitions/
+    Revised by The Super Coding Ninja https://www.linkedin.com/in/discoverfrederickthomas/
+===============================================================================================*/
+
+.os-phrases h2 {
+	font-family: 'Dosis', 'Lato', sans-serif;
+	font-size: 70px;
+	font-weight: 200;
+	width: 100%;
+	overflow: hidden;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	letter-spacing: 14px;
+	text-align: center;
+	opacity: 0;
+}
+
+.os-phrases h2,
+.os-phrases h2 > span {
+	height: 100%;
+	/* Centering with flexbox */
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.os-phrases h2 > span {
+	margin: 0 15px;
+}
+
+.os-phrases h2 > span > span {
+	display: inline-block;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.os-phrases h2 > span > span > span {
+	display: inline-block;
+	color: hsla(0,0%,0%,0);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-animation: OpeningSequence 5.2s linear forwards;
+	-moz-animation: OpeningSequence 5.2s linear forwards;
+	animation: OpeningSequence 5.2s linear forwards;
+}
+
+.os-phrases h2:nth-child(2) > span > span > span {
+	-webkit-animation-delay: 5s;
+	-moz-animation-delay: 5s;
+	animation-delay: 5s;
+}
+
+.os-phrases h2:nth-child(3) > span > span > span {
+	-webkit-animation-delay: 10s;
+	-moz-animation-delay: 10s;
+	animation-delay: 10s;
+}
+
+.os-phrases h2:nth-child(4) > span > span > span {
+	-webkit-animation-delay: 15s;
+	-moz-animation-delay: 15s;
+	animation-delay: 15s;
+}
+
+.os-phrases h2:nth-child(5) > span > span > span {
+	font-size: 150px;
+	-webkit-animation-delay: 21s;
+	-moz-animation-delay: 21s;
+	animation-delay: 21s;
+	-webkit-animation-duration: 8s;
+	-moz-animation-duration: 8s;
+	animation-duration: 8s;
+}
+
+.os-phrases h2:nth-child(6) > span > span > span {
+	-webkit-animation-delay: 30s;
+	-moz-animation-delay: 30s;
+	animation-delay: 30s;
+}
+
+.os-phrases h2:nth-child(7) > span > span > span {
+	-webkit-animation-delay: 34s;
+	-moz-animation-delay: 34s;
+	animation-delay: 34s;
+}
+
+@-webkit-keyframes OpeningSequence {
+	0% {
+		text-shadow: 0 0 50px #fff;
+		letter-spacing: 80px;
+		opacity: 0;
+		-webkit-transform: rotateY(-90deg);
+	}
+	50% {
+		text-shadow: 0 0 1px #fff;
+		letter-spacing: 14px;
+		opacity: 0.8;
+		-webkit-transform: rotateY(0deg);
+	}
+	85% {
+		text-shadow: 0 0 1px #fff;
+		opacity: 0.8;
+		-webkit-transform: rotateY(0deg) translateZ(100px);
+	}
+	100% {
+		text-shadow: 0 0 10px #fff;
+		opacity: 0;
+		-webkit-transform: translateZ(130px);
+		pointer-events: none;
+	}
+}
+
+@-moz-keyframes OpeningSequence {
+	0% {
+		text-shadow: 0 0 50px #fff;
+		letter-spacing: 80px;
+		opacity: 0.2;
+		-moz-transform: rotateY(-90deg);
+	}
+	50% {
+		text-shadow: 0 0 1px #fff;
+		letter-spacing: 14px;
+		opacity: 0.8;
+		-moz-transform: rotateY(0deg);
+	}
+	85% {
+		text-shadow: 0 0 1px #fff;
+		opacity: 0.8;
+		-moz-transform: rotateY(0deg) translateZ(100px);
+	}
+	100% {
+		text-shadow: 0 0 10px #fff;
+		opacity: 0;
+		-moz-transform: translateZ(130px);
+		pointer-events: none;
+	}
+}
+
+@keyframes OpeningSequence {
+	0% {
+		text-shadow: 0 0 50px #fff;
+		letter-spacing: 80px;
+		opacity: 0.2;
+		transform: rotateY(-90deg);
+	}
+	50% {
+		text-shadow: 0 0 1px #fff;
+		letter-spacing: 14px;
+		opacity: 0.8;
+		transform: rotateY(0deg);
+	}
+	85% {
+		text-shadow: 0 0 1px #fff;
+		opacity: 0.8;
+		transform: rotateY(0deg) translateZ(100px);
+	}
+	100% {
+		text-shadow: 0 0 10px #fff;
+		opacity: 0;
+		transform: translateZ(130px);
+		pointer-events: none;
+	}
+}
+
+.os-phrases h2:nth-child(8) > span > span > span {
+	font-size: 30px;
+	-webkit-animation: FadeIn 4s linear 40s forwards;
+	-moz-animation: FadeIn 4s linear 40s forwards;
+	animation: FadeIn 4s linear 40s forwards;
+}
+
+@-webkit-keyframes FadeIn { 
+	0% {
+		opacity: 0;
+		text-shadow: 0 0 50px #fff;
+	}
+	100% {
+		opacity: 0.8;
+		text-shadow: 0 0 1px #fff;
+	}
+}
+
+@-moz-keyframes FadeIn { 
+	0% {
+		opacity: 0;
+		text-shadow: 0 0 50px #fff;
+	}
+	100% {
+		opacity: 0.8;
+		text-shadow: 0 0 1px #fff;
+	}
+}
+
+@keyframes FadeIn { 
+	0% {
+		opacity: 0;
+		text-shadow: 0 0 50px #fff;
+	}
+	100% {
+		opacity: 0.8;
+		text-shadow: 0 0 1px #fff;
+	}
+}
+
+/* Bold words */
+.os-phrases h2:first-child .word3,
+.os-phrases h2:nth-child(2) .word2,
+.os-phrases h2:nth-child(4) .word2 {
+	font-weight: 600;
+}
+/*End Tutorial Take Away*/
+
+
+.earth {
+    position: absolute;
+      top: calc(50% - 100px);
+      left: calc(50% - 100px);
+    animation: rotate 20s linear infinite;
+    background: none;    
+    pointer-events: none;
+    transform-origin: 25px;
+}
+
+.earth img {
+    height: 200px;
+    position: absolute;
+      top: 0;
+      left: 0;
+}
+
+.moon-container {
+    position: absolute;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+}
+
+.moon {
+    animation: spin 35s linear infinite;
+    background: none;
+    height: 50px;
+    pointer-events: none;
+    transform-origin: 25px;
+    width: 50px;
+}
+
+.moon img {
+    height: 50px;
+    transform: translateX(-180px) translateY(-180px);
+    width: 50px;
+}
+
+.earth img, .moon img, .spaceStation {
+    border-radius: 50%;
+    box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
+}
+
+.spaceStation-container {
+    position: absolute;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+}
+
+.spaceStation {
+    animation: spin 9s linear infinite;
+    background: transparent;
+    height: 35px;
+    pointer-events: none;
+    transform-origin: 15px;
+    width: 35px;
+}
+
+.spaceStation img {
+    height: 35px;
+    transform: translateX(90px) translateY(90px);
+    width: 35px;
+}
+
+.moon-container {
+    position: center;
+      top: calc(48% - 25px);
+      left: calc(48% - 25px);
+}
+
+.clock {
+    background: transparent;
+    height: 40px;
+    width: 154px;
+}
+
+.clock iframe {
+    line-height: 50px;
+    font-weight: 900;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    color: bisque;
+	text-shadow: 2px 2px 3px goldenrod;
+}
+
+@keyframes spin {
+    to {
+      transform: rotateZ(360deg);
+    }
+}
+
+/* @keyframes rotate {
+    to {
+      transform: rotateY(360deg);
+    }
+} */
+
+.earth:hover img {
+    transform: translateX(-75px) translateY(-75px) scale(.5);
+}
+
+/* REMEMBER: for X to Y, there is NO semicolon!  X to X, or Y to Y, there are semicolons.
+    .moon:hover img {
+    transform: translateX(-75px);
+    translateY(-75px) scale(.5);
+}  */
+
+.earth:hover ~ .moon-container {
+    transform: translateX(-75px) translateY(-75px) scale(.5);
+}
+
+.earth:hover ~ .moon-container img {
+    transform: translateX(-140px) translateY(-140px);
+}
+
+.earth:hover .more-info {
+    opacity: 1; transform: none;
+}
+
+.earth .more-info {
+    background-image: linear-gradient(to bottom, rgba(10,10,10,1), black);
+    border-radius: 1em;
+    color: #fff;
+    opacity: 0;
+    padding: 1em;
+    transform-origin: 0 0;
+    transform: scale(.8);
+    width: 400px;
+}
+  
+.earth .more-info h1 {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 25px;
+	line-height: 40px;
+	padding-bottom: 0px;
+	font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    color: aliceblue;
+    margin: 0 0 1em;
+}
+
+.earth-demo * {
+    transition: all 4s cubic-bezier(0,1.5,.3,1);
+}
+
+.earth-demo h1, li {
+    opacity: 0;
+    display: block;
+}
+
+.earth-demo:hover li:nth-child(1) {
+    transition-delay: 0s;
+}
+  
+.earth-demo:hover li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .earth-demo {
+    background: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  
+.earth-demo:before {
+    background: url(./VidsAndGifs/spacecraftOrbitingEarth.gif) repeat center;
+    background-size: cover;
+    content: "";
+    opacity: .5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+  
+.earth {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+}
+
+.earth img {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.earth .more-info {
+    background-image: transparent;
+    border-radius: 1em;
+    color: #fff;
+    opacity: 0;
+    padding: 1em;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    width: 400px;
+}
+
+.earth .more-info h1 {
+    margin: 0 0 1em;
+    text-align: center;
+}
+
+.earth .more-info h1, .earth .more-info li {
+    font-family: 'Space Mono', monospace;
+    opacity: 0;
+}
+  
+.moon-container {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+}
+  
+.moon {
+    -webkit-animation: spin 20s linear infinite;
+    animation: spin 20s linear infinite;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    pointer-events:auto;
+    -webkit-transform-origin: 25px;
+    transform-origin: 25px;
+}
+
+.moon img {
+    -webkit-transform: translateX(-160px) translateY(-160px);
+    transform: translateX(-160px) translateY(-160px);
+    width: 50px;
+}
+  
+.earth img, .moon img {
+    border-radius: 50%;
+    box-shadow: 0 0 12em 1em rgba(110, 140, 200, 0.6);
+}
+  
+.earth:hover img, .earth.active img {
+    -webkit-transform: translateX(-75px) translateY(-75px) scale(0.5);
+    transform: translateX(-75px) translateY(-75px) scale(0.5);
+}
+
+.earth:hover ~ .moon-container, .earth.active ~ .moon-container {
+    -webkit-transform: translateX(-75px) translateY(-75px) scale(0.4);
+    transform: translateX(-75px) translateY(-75px) scale(0.4);
+}
+
+.earth:hover ~ .moon-container img, .earth.active ~ .moon-container img {
+    -webkit-transform: translateX(-140px) translateY(-140px);
+    transform: translateX(-140px) translateY(-140px);
+}
+
+.earth:hover .more-info, .earth.active .more-info {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.earth:hover .more-info h1, .earth:hover .more-info li, .earth.active .more-info h1, .earth.active .more-info li {
+    opacity: 1;
+}
+  
+* {
+    transition: all 4s cubic-bezier(0, 1.5, 0.3, 1);
+}
+  
+@-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotateZ(-360deg);
+              transform: rotateZ(-360deg);
+    }
+}
+/* Here I just wanted to see what I did wrong; so I did the exact- NOT KEEPING!  I'm going to redo line by line*/
+/*Need to figure out phrases*/
+.os-phrases h2 {
+	font-family: 'Dosis', 'Lato', sans-serif;
+	font-size: 70px;
+	font-weight: 200;
+	width: 100%;
+	overflow: hidden;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	letter-spacing: 14px;
+	text-align: center;
+	opacity: 0;
+}
+
+.os-phrases h2,
+.os-phrases h2 > span {
+	height: 100%;
+    
+    /*Suppose to center the flex box*/
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.os-phrases h2 > span {
+	margin: 0 15px;
+}
+
+.os-phrases h2 > span > span {
+	display: inline-block;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.os-phrases h2 > span > span > span {
+	display: inline-block;
+	color: hsla(0,0%,0%,0);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-animation: OpeningSequence 5.2s linear forwards;
+	-moz-animation: OpeningSequence 5.2s linear forwards;
+	animation: OpeningSequence 5.2s linear forwards;
+}
+
+.os-phrases h2:nth-child(2) > span > span > span {
+	-webkit-animation-delay: 5s;
+	-moz-animation-delay: 5s;
+	animation-delay: 5s;
+}
+
+.os-phrases h2:nth-child(3) > span > span > span {
+	-webkit-animation-delay: 10s;
+	-moz-animation-delay: 10s;
+	animation-delay: 10s;
+}
+
+.os-phrases h2:nth-child(4) > span > span > span {
+	-webkit-animation-delay: 15s;
+	-moz-animation-delay: 15s;
+	animation-delay: 15s;
+}
+
+.os-phrases h2:nth-child(5) > span > span > span {
+	font-size: 150px;
+	-webkit-animation-delay: 21s;
+	-moz-animation-delay: 21s;
+	animation-delay: 21s;
+	-webkit-animation-duration: 8s;
+	-moz-animation-duration: 8s;
+	animation-duration: 8s;
+}
+
+.os-phrases h2:nth-child(6) > span > span > span {
+	-webkit-animation-delay: 30s;
+	-moz-animation-delay: 30s;
+	animation-delay: 30s;
+}
+
+.os-phrases h2:nth-child(7) > span > span > span {
+	-webkit-animation-delay: 34s;
+	-moz-animation-delay: 34s;
+	animation-delay: 34s;
+}
+
+@-webkit-keyframes OpeningSequence {
+	0% {
+		text-shadow: 0 0 50px #fff;
+		letter-spacing: 80px;
+		opacity: 0;
+		-webkit-transform: rotateY(-90deg);
+	}
+	50% {
+		text-shadow: 0 0 1px #fff;
+		letter-spacing: 14px;
+		opacity: 0.8;
+		-webkit-transform: rotateY(0deg);
+	}
+	85% {
+		text-shadow: 0 0 1px #fff;
+		opacity: 0.8;
+		-webkit-transform: rotateY(0deg) translateZ(100px);
+	}
+	100% {
+		text-shadow: 0 0 10px #fff;
+		opacity: 0;
+		-webkit-transform: translateZ(130px);
+		pointer-events: none;
+	}
+}
+
+@-moz-keyframes OpeningSequence {
+	0% {
+		text-shadow: 0 0 50px #fff;
+		letter-spacing: 80px;
+		opacity: 0.2;
+		-moz-transform: rotateY(-90deg);
+	}
+	50% {
+		text-shadow: 0 0 1px #fff;
+		letter-spacing: 14px;
+		opacity: 0.8;
+		-moz-transform: rotateY(0deg);
+	}
+	85% {
+		text-shadow: 0 0 1px #fff;
+		opacity: 0.8;
+		-moz-transform: rotateY(0deg) translateZ(100px);
+	}
+	100% {
+		text-shadow: 0 0 10px #fff;
+		opacity: 0;
+		-moz-transform: translateZ(130px);
+		pointer-events: none;
+	}
+}
+
+@keyframes OpeningSequence {
+	0% {
+		text-shadow: 0 0 50px #fff;
+		letter-spacing: 80px;
+		opacity: 0.2;
+		transform: rotateY(-90deg);
+	}
+	50% {
+		text-shadow: 0 0 1px #fff;
+		letter-spacing: 14px;
+		opacity: 0.8;
+		transform: rotateY(0deg);
+	}
+	85% {
+		text-shadow: 0 0 1px #fff;
+		opacity: 0.8;
+		transform: rotateY(0deg) translateZ(100px);
+	}
+	100% {
+		text-shadow: 0 0 10px #fff;
+		opacity: 0;
+		transform: translateZ(130px);
+		pointer-events: none;
+	}
+}
+
+.os-phrases h2:nth-child(8) > span > span > span {
+	font-size: 30px;
+	-webkit-animation: FadeIn 4s linear 40s forwards;
+	-moz-animation: FadeIn 4s linear 40s forwards;
+	animation: FadeIn 4s linear 40s forwards;
+}
+
+@-webkit-keyframes FadeIn { 
+	0% {
+		opacity: 0;
+		text-shadow: 0 0 50px #fff;
+	}
+	100% {
+		opacity: 0.8;
+		text-shadow: 0 0 1px #fff;
+	}
+}
+
+@-moz-keyframes FadeIn { 
+	0% {
+		opacity: 0;
+		text-shadow: 0 0 50px #fff;
+	}
+	100% {
+		opacity: 0.8;
+		text-shadow: 0 0 1px #fff;
+	}
+}
+
+@keyframes FadeIn { 
+	0% {
+		opacity: 0;
+		text-shadow: 0 0 50px #fff;
+	}
+	100% {
+		opacity: 0.8;
+		text-shadow: 0 0 1px #fff;
+	}
+}
+
+/*Make the words appearing, bold*/
+.os-phrases h2:first-child .word3,
+.os-phrases h2:nth-child(2) .word2,
+.os-phrases h2:nth-child(4) .word2 {
+	font-weight: 600;
+}

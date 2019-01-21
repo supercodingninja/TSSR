@@ -1,0 +1,100 @@
+<!--This page was not required; but I really want to get the full effect of the "Submit" button, without building a website for cost, plus all the other requirements for holding sensative information.  I did originally thought about providing a local storage; but at this point of my progression as a full-stack developer and engineer, I am trying to focus more of concised and necessary markup, with HTML5; use little logic as possible, or place majority/all logic in a language like JavaScript (no/little requirement for End User to download/update machine with software or program; which could slow/hinder machine's desired performance/functionality [my opinion, at the momnet: I am open-minded]); and leave all/majority of animation with CSS3.  It is my hope and desired effefct that code is clear to the End User, Developer; and the machine and server.  I kept some original thought or intentions, in attempt to get my code to work as I desired; i.e. trying to get certain backgrounds to show.  I beleive some of my code is affecting other desired code, particurally my animations (syntax vs. symantix).-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Space Station | Resort</title>
+    <link rel="stylesheet" href="SubInfo2.css">
+    <script src="script.js"></script>
+  </head>
+  
+  <!-- <body background= ""> -->
+  <body>    
+    <header>
+
+        <audio controls autoplay style="display:none">
+                <source src="11 - Rise Up.mp3" type="audio/mpeg">
+                <!--Song: "Rise Up" Artist: Adrea Day, Track Purchased-->
+                <!-- Your browser does not support the audio element. -->
+        </audio>
+
+        <div class="container">	
+            <div class="os-phrases" id="os-phrases">
+                <h2>Wait 4 it...</h2>
+                <h2>Can you hear it:</h2>
+                <h2>Your theme song...</h2>
+                <h2>To Interstellar Freedom!</h2>
+                <h2>It's okay to leave Planet Earth, once; and a while...</h2>
+                <h2>At least, in our case!</h2>
+                <h2>Thank you for exploring with us.</h2>
+                <h2>Your Countdown to Liftoff Begins...</h2>
+                
+                <!--The next <h2>, or "child," is designed to make a countdown clock appear:  My hope is that the end user will receive a reaistic effect, that they could almost imagine that they are embarking onto an actual resort, in space! The average preperation for a space mission is 215 +/  (7 1/3 months, roughly); so,this child's inheritance should cause it to be last: thus, giving it the full effect desired that the end user actually decided to go into space.  This was not required of my project (in fact, this entire page was not); but I wanted to try some things I liked, or thought of, or envisioned to do.--->
+                <!-- <h2><iframe src="http://free.timeanddate.com/countdown/i6l6sxfi/n234/cf12/cm0/cu4/ct0/cs1/ca0/co0/cr0/ss1/cac000/cpcf00/pct/tcfff/fs100/szw448/szh189/iso2019-07-10T23:59:59" allowTransparency="true" frameborder="0" width="154" height="40"></iframe>
+                </h2> -->
+            </div>
+        </div>
+    </container>
+        
+        <!-- <div class="video-background">
+            <div class="video-foreground">
+                <iframe src="https://youtu.be/Rd_NMT5yIDA" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+            
+        <div id="vidtop-content"> -->
+
+        <h3>Thank You!</h3>
+          <p>Hover the Earth for More info.!</p>
+                        
+        <!--My spin of the tutorial for "Transistions in Space;" which can be viewed at https://cssanimation.rocks/space-transitions/-->  
+        <article class="earth-demo">
+            <div class="earth">
+              <img src="./VidsAndGifs/ezgif.com-video-to-gif.gif">
+            </div>
+            
+            <div class="moon-container">
+              <div class="moon">
+                <img src="https://cssanimation.rocks/images/random/moon.png">
+              </div>
+            </div>
+        </article>
+
+        <article class="earth-demo">
+            <div class="earth">
+                <div class="more-info">
+                    <h1>Follow Me</h1>
+                        <ul>
+                            <li><a class="Me" href="https://www.linkedin.com/in/discoverfrederickthomas/">Discover Frederick Thomas</a></li>
+                           
+                            <li><a href="https://github.com/supercodingninja">The Super Coding Ninja</a> &nbsp;|&nbsp; &copy; 2018</li>
+                        </ul>
+                </div>
+               
+                <!-- <img src="https://cssanimation.rocks/images/random/earth.png"> -->
+               
+                <img src="./VidsAndGifs/ezgif.com-video-to-gif.gif">
+            </div>
+            
+            <div class="moon-container">
+                <div class="moon">
+                    <img src="https://cssanimation.rocks/images/random/moon.png">
+                </div>
+
+            <div class="spaceStation-container">
+                <div class="spaceStation">
+                    <img src="./Imgs/SpaceStation.jpg">
+                </div>
+            </div>
+
+            <div class="countdown-container">
+                <div class="clock">
+                    <iframe src="http://free.timeanddate.com/countdown/i6l6sxfi/n234/cf12/cm0/cu4/ct0/cs1/ca0/co0/cr0/ss1/cac000/cpcf00/pct/tcfff/fs100/szw448/szh189/iso2019-08-20T23:59:59" allowTransparency="true" frameborder="0" width="" height="" font="sans-serif" color="bisque"></iframe>
+                </div>
+            </div>      
+        </article>
+        
+    </header>
+
+  </body>
+</html>

@@ -1,0 +1,320 @@
+/* html { 
+    background:  url(./VidsAndGifs/Sunrise-From-Space-Earth-Animation.mp4) repeat center fixed; 
+    background-size: cover;
+  } */
+
+/* * {
+    box-sizing: border-box;
+}
+
+.video-background {
+  background:url(https://www.youtube.com/watch?v=X6dJEAs0-Gk);
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+#vidtop-content {
+	top: 0;
+	color: #fff;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground { height: 300%; top: -100%; }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .video-foreground { width: 300%; left: -100%; }
+  }
+  @media all and (max-width: 600px) {
+  .vid-info { width: 50%; padding: .5rem; }
+  .vid-info h1 { margin-bottom: .2rem; }
+  }
+  @media all and (max-width: 500px) {
+  .vid-info .acronym { display: none; }
+  } */
+
+body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /*=========================================================================================== 
+  
+  I NEED TO FIGURE OUT WHY THIS SECTION IS NOT APPEARING
+  
+  h3 {
+	padding-top: 25px;
+	line-height: 40px;
+	padding-bottom: 0px;
+	font-size: 22px;
+	font-weight: 900;
+}
+
+p {
+    font-weight: 300;
+    line-height: 30px;
+    padding-bottom: 15px;
+}
+  =============================================================================================*/
+
+/*===============================================================================================
+                Awesome CSS Tutorial on https://cssanimation.rocks/space-transitions/
+    Revised by The Super Coding Ninja https://www.linkedin.com/in/discoverfrederickthomas/
+===============================================================================================*/
+
+.earth {
+    position: absolute;
+      top: calc(50% - 100px);
+      left: calc(50% - 100px);
+    animation: rotate 20s linear infinite;
+    background: none;    
+    pointer-events: none;
+    transform-origin: 25px;
+}
+
+.earth img {
+    height: 200px;
+    position: absolute;
+      top: 0;
+      left: 0;
+}
+
+.moon-container {
+    position: absolute;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+}
+
+.moon {
+    animation: spin 20s linear infinite;
+    background: none;
+    height: 50px;
+    pointer-events: none;
+    transform-origin: 25px;
+    width: 50px;
+}
+
+.moon img {
+    height: 50px;
+    transform: translateX(-160px) translateY(-160px);
+    width: 50px;
+}
+
+.earth img, .moon img {
+    border-radius: 50%;
+    box-shadow: 0 0 12em 1em rgba(110, 140, 200, .6);
+}
+
+@keyframes spin {
+    to {
+      transform: rotateZ(360deg);
+    }
+}
+
+/* @keyframes rotate {
+    to {
+      transform: rotateY(360deg);
+    }
+} */
+
+.earth:hover img {
+    transform: translateX(-75px) translateY(-75px) scale(.5);
+}
+
+/* REMEMBER: for X to Y, there is NO semicolon!  X to X, or Y to Y, there are semicolons.
+    .moon:hover img {
+    transform: translateX(-75px);
+    translateY(-75px) scale(.5);
+}  */
+
+.earth:hover ~ .moon-container {
+    transform: translateX(-75px) translateY(-75px) scale(.5);
+}
+
+.earth:hover ~ .moon-container img {
+    transform: translateX(-140px) translateY(-140px);
+}
+
+.earth:hover .more-info {
+    opacity: 1; transform: none;
+}
+
+.earth .more-info {
+    background-image: linear-gradient(to bottom, rgba(10,10,10,1), black);
+    border-radius: 1em;
+    color: #fff;
+    opacity: 0;
+    padding: 1em;
+    transform-origin: 0 0;
+    transform: scale(.8);
+    width: 400px;
+}
+  
+.earth .more-info h1 {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 25px;
+	line-height: 40px;
+	padding-bottom: 0px;
+	font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    color: aliceblue;
+    margin: 0 0 1em;
+}
+
+.earth-demo * {
+    transition: all 4s cubic-bezier(0,1.5,.3,1);
+}
+
+.earth-demo h1, li {
+    opacity: 0;
+    display: block;
+}
+
+.earth-demo:hover li:nth-child(1) {
+    transition-delay: 0s;
+}
+  
+.earth-demo:hover li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .earth-demo {
+    background: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  
+.earth-demo:before {
+    background: url(./VidsAndGifs/spacecraftOrbitingEarth.gif) repeat center;
+    background-size: cover;
+    content: "";
+    opacity: .5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+  
+.earth {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+}
+
+.earth img {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.earth .more-info {
+    background-image: transparent;
+    border-radius: 1em;
+    color: #fff;
+    opacity: 0;
+    padding: 1em;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    width: 400px;
+}
+
+.earth .more-info h1 {
+    margin: 0 0 1em;
+    text-align: center;
+}
+
+.earth .more-info h1, .earth .more-info li {
+    font-family: 'Space Mono', monospace;
+    opacity: 0;
+}
+  
+.moon-container {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+}
+  
+.moon {
+    -webkit-animation: spin 20s linear infinite;
+    animation: spin 20s linear infinite;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    pointer-events:auto;
+    -webkit-transform-origin: 25px;
+    transform-origin: 25px;
+}
+
+.moon img {
+    -webkit-transform: translateX(-160px) translateY(-160px);
+    transform: translateX(-160px) translateY(-160px);
+    width: 50px;
+}
+  
+.earth img, .moon img {
+    border-radius: 50%;
+    box-shadow: 0 0 12em 1em rgba(110, 140, 200, 0.6);
+}
+  
+.earth:hover img, .earth.active img {
+    -webkit-transform: translateX(-75px) translateY(-75px) scale(0.5);
+    transform: translateX(-75px) translateY(-75px) scale(0.5);
+}
+
+.earth:hover ~ .moon-container, .earth.active ~ .moon-container {
+    -webkit-transform: translateX(-75px) translateY(-75px) scale(0.4);
+    transform: translateX(-75px) translateY(-75px) scale(0.4);
+}
+
+.earth:hover ~ .moon-container img, .earth.active ~ .moon-container img {
+    -webkit-transform: translateX(-140px) translateY(-140px);
+    transform: translateX(-140px) translateY(-140px);
+}
+
+.earth:hover .more-info, .earth.active .more-info {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.earth:hover .more-info h1, .earth:hover .more-info li, .earth.active .more-info h1, .earth.active .more-info li {
+    opacity: 1;
+}
+  
+* {
+    transition: all 4s cubic-bezier(0, 1.5, 0.3, 1);
+}
+  
+@-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotateZ(360deg);
+              transform: rotateZ(360deg);
+    }
+}
+  
+@keyframes spin {
+    to {
+      -webkit-transform: rotateZ(-360deg);
+              transform: rotateZ(-360deg);
+    }
+}
